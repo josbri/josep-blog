@@ -4,14 +4,15 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             frontmatter {
               title
-              date
-            }
-            fields {
+              date(formatString: "DD MMMM, YYYY")
               slug
             }
           }
@@ -27,7 +28,7 @@ const BlogPage = () => {
         {data.allMarkdownRemark.edges.map(edge => {
           return (
             <li>
-              <Link to={`/blog/${edge.node.fields.slug}`}>
+              <Link to={`/blog/${edge.node.frontmatter.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
                 <p>{edge.node.frontmatter.date}</p>
               </Link>

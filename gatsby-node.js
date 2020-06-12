@@ -1,20 +1,20 @@
 const path = require("path")
 
-module.exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions
+// module.exports.onCreateNode = ({ node, actions }) => {
+//   const { createNodeField } = actions
 
-  //Only the ones labeled as MarkdownRemark
-  if (node.internal.type === "MarkdownRemark") {
-    //We get the slugs for the markdown pages, and remove the .md so we can use it for the url.
-    const slug = path.basename(node.fileAbsolutePath, ".md")
+//   //Only the ones labeled as MarkdownRemark
+//   if (node.internal.type === "MarkdownRemark") {
+//     //We get the slugs for the markdown pages, and remove the .md so we can use it for the url.
+//     const slug = path.basename(node.fileAbsolutePath, ".md")
 
-    createNodeField({
-      node,
-      name: "slug",
-      value: slug,
-    })
-  }
-}
+//     createNodeField({
+//       node,
+//       name: "slug",
+//       value: slug,
+//     })
+//   }
+// }
 
 //Creating a new page for each blogpost
 module.exports.createPages = async ({ graphql, actions }) => {
@@ -27,7 +27,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
-            fields {
+            frontmatter {
               slug
             }
           }
@@ -35,12 +35,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+  if (res.errors) {
+    reporter.panicOnBuild(`Erro while running GraphQL query.`)
+    return
+  }
+
   res.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
       component: blogTemplate,
-      path: `/blog/${edge.node.fields.slug}`,
+      path: `/blog/${edge.node.frontmatter.slug}`,
       context: {
-        slug: edge.node.fields.slug,
+        slug: edge.node.frontmatter.slug,
       },
     })
   })

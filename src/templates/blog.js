@@ -3,10 +3,10 @@ import { graphql } from "gatsby"
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        date
+        date(formatString: "DD MMMM, YYYY")
       }
       html
     }
