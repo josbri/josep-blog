@@ -1,10 +1,31 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
-  plugins: [`gatsby-plugin-netlify-cms`],
+  siteMetadata: { title: "Josep Bria Portfolio", author: "Josep Bria" },
+  plugins: [
+    `gatsby-plugin-netlify-cms`,
+    {
+      //Look for files in the filesistem, but we can add options.
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        //Busca en la carpeta blog para sources
+        path: `${__dirname}/blog/`,
+      },
+    },
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+  ],
 }
