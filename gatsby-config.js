@@ -8,7 +8,7 @@ module.exports = {
       options: {
         name: "blog",
         //Busca en la carpeta blog para sources
-        path: `${__dirname}/blog/`,
+        path: `${__dirname}/static/blog/`,
       },
     },
     "gatsby-plugin-sharp",
