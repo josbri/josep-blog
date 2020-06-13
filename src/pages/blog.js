@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import Head from "../components/head"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -23,6 +24,7 @@ const BlogPage = () => {
 
   return (
     <div>
+      <Head title="Blogs" />
       <h1>Blogs</h1>
       <ol>
         {data.allMarkdownRemark.edges.map(edge => {

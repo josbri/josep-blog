@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: { title: "Josep Bria Portfolio", author: "Josep Bria" },
   plugins: [
+    "gatsby-plugin-react-helmet",
     `gatsby-plugin-netlify-cms`,
     {
       //Look for files in the filesistem, but we can add options.

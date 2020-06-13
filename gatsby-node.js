@@ -1,21 +1,5 @@
 const path = require("path")
 
-// module.exports.onCreateNode = ({ node, actions }) => {
-//   const { createNodeField } = actions
-
-//   //Only the ones labeled as MarkdownRemark
-//   if (node.internal.type === "MarkdownRemark") {
-//     //We get the slugs for the markdown pages, and remove the .md so we can use it for the url.
-//     const slug = path.basename(node.fileAbsolutePath, ".md")
-
-//     createNodeField({
-//       node,
-//       name: "slug",
-//       value: slug,
-//     })
-//   }
-// }
-
 //Creating a new page for each blogpost
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -51,3 +35,19 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+// module.exports.onCreateNode = ({ node, actions }) => {
+//   const { createNodeField } = actions
+
+//   //Only the ones labeled as MarkdownRemark
+//   if (node.internal.type === "MarkdownRemark") {
+//     //We get the slugs for the markdown pages, and remove the .md so we can use it for the url.
+//     const slug = path.basename(node.fileAbsolutePath, ".md")
+
+//     createNodeField({
+//       node,
+//       name: "slug",
+//       value: slug,
+//     })
+//   }
+// }
