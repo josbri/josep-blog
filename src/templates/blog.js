@@ -1,17 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        date(formatString: "DD MMMM, YYYY")
-      }
-      html
-    }
-  }
-`
 const Blog = props => {
   return (
     <div>
@@ -24,4 +13,15 @@ const Blog = props => {
   )
 }
 
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        date(formatString: "DD MMMM, YYYY")
+      }
+      html
+    }
+  }
+`
 export default Blog
