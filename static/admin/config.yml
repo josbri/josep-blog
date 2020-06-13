@@ -8,9 +8,16 @@ collections:
     label: Blog
     folder: static/blog
     create: true
-    slug: "{{slug}}"
     fields:
       - { name: date, label: Date, widget: datetime }
-      - { name: tags, label: Tags, widget: list }
+      - {
+          name: tags,
+          label: Tags,
+          widget: select,
+          multiple: true,
+          options: [".Net", "React", "CSS", "SQL", "Git", "JamStack"],
+          min: 1,
+        }
       - { name: title, label: Title, widget: string, required: true }
+      - { name: slug, lable: Slug, widget: string, required: true }
       - { name: body, label: Body, widget: markdown }
