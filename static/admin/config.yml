@@ -1,12 +1,12 @@
 backend:
   name: github
   repo: josbri/josep-blog
-media_folder: blog/assets
+media_folder: static/blog/assets
 public_folder: assets
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: static/blog
     create: true
     fields:
       - { name: slug, label: Slug }
