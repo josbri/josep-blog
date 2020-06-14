@@ -1,13 +1,11 @@
 import React from "react"
-import Head from "../components/head"
-
+import MainLayout from "../templates/mainLayout"
 //Entry point for Gatsby
 const IndexPage = () => {
   return (
-    <div>
-      <Head title="Home" />
-      <h1>Hola!</h1>
-    </div>
+    <MainLayout title="Home">
+      <h1> Hola! </h1>
+    </MainLayout>
   )
 }
 

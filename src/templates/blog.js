@@ -1,17 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Head from "../components/head"
+
+import MainLayout from "./mainLayout"
 
 const Blog = props => {
   return (
-    <div>
-      <Head title={props.data.markdownRemark.frontmatter.title} />
+    <MainLayout title={props.data.markdownRemark.frontmatter.title}>
       <h1>{props.data.markdownRemark.frontmatter.title}</h1>
       <p>{props.data.markdownRemark.frontmatter.date}</p>
       <div
         dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
       ></div>
-    </div>
+    </MainLayout>
   )
 }
 

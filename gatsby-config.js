@@ -3,6 +3,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     `gatsby-plugin-netlify-cms`,
+    "gatsby-plugin-styled-components",
     {
       //Look for files in the filesistem, but we can add options.
       resolve: "gatsby-source-filesystem",
@@ -26,6 +27,13 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ["work sans"],
+        display: "swap",
       },
     },
   ],
