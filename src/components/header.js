@@ -5,7 +5,7 @@ import styled from "styled-components"
 import MainLogo from "../assets/images/logojosep.png"
 
 const Container = styled.header``
-const List = styled.li`
+const List = styled.ul`
   display: flex;
   flex-direction: row;
   list-style-type: none;

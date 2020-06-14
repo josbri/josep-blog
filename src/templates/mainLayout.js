@@ -10,11 +10,9 @@ const Container = styled.div`
   padding: 1rem;
 `
 
-const GlobalStyle = createGlobalStyle`
-  body {
+// const GlobalStyle = createGlobalStyle`
 
-  }
-`
+// `
 const MainLayout = props => {
   return (
     <Container>
