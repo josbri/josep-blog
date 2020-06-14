@@ -1,8 +1,7 @@
 import React from "react"
 
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import MainLogo from "../assets/images/logojosep.png"
 
 const Container = styled.header``
 const List = styled.ul`
@@ -14,6 +13,14 @@ const List = styled.ul`
 `
 
 const Header = () => {
+  //Get the Logo:
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
+    }
+  `)
   return (
     <Container>
       <nav>
@@ -25,7 +32,7 @@ const Header = () => {
             <Link to="/blog"> Notes</Link>
           </li>
           <li>
-            <img src={MainLogo} alt="Josep Bria" width="70" height="70" />
+            <img src={data.logo.publicURL} alt="Josep Bria" width="100" />
           </li>
           <li>
             <Link to="/contact"> Contact</Link>

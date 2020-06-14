@@ -5,12 +5,21 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     "gatsby-plugin-styled-components",
     {
-      //Look for files in the filesistem, but we can add options.
+      //Look for blog in the filesistem, but we can add options.
       resolve: "gatsby-source-filesystem",
       options: {
         name: "blog",
         //Busca en la carpeta blog para sources
         path: `${__dirname}/static/blog/`,
+      },
+    },
+    {
+      //Look for images in the filesistem, but we can add options.
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        //Busca en la carpeta images para sources
+        path: `${__dirname}/src/assets/images`,
       },
     },
     "gatsby-plugin-sharp",
