@@ -1,8 +1,23 @@
 import React from "react"
-import { ThemeProvider } from "styled-components"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
 import Theme from "./src/themes/theme"
 
+const GlobalStyles = createGlobalStyle`
+    *  {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body, html {
+        font-family: ${props => props.theme.fonts.main};
+        height: 100%;
+        
+    }
+`
 //Wrapping the application with the theme provider
 export const wrapRootElement = ({ element }) => (
-  <ThemeProvider theme={Theme}>{element}</ThemeProvider>
+  <ThemeProvider theme={Theme}>
+    <GlobalStyles />
+    {element}
+  </ThemeProvider>
 )
