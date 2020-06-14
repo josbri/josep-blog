@@ -3,13 +3,36 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
-const Container = styled.header``
+const Container = styled.header`
+  grid-column: 2 / span 12;
+  grid-row: 1 / 2;
+
+  margin-bottom: ${props => props.theme.spacings.small};
+
+  @media ${props => props.theme.breakpoints.tablet} {
+    grid-column: 2 / span 6;
+  }
+`
 const List = styled.ul`
   display: flex;
   flex-direction: row;
   list-style-type: none;
   justify-content: space-between;
   align-items: center;
+  font-weight: 300;
+`
+const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:hover,
+  &:visited {
+    color: inherit;
+  }
+`
+const Logo = styled.a`
+  font-size: 2rem;
+  font-weight: 1000;
+  color: green;
 `
 
 const Header = () => {
@@ -26,19 +49,21 @@ const Header = () => {
       <nav>
         <List>
           <li>
-            <Link to="/portfolio"> Projects</Link>
+            {/*<img src={data.logo.publicURL} alt="Josep Bria" width="100" />*/}
+            <Logo>JOSEP BRIA</Logo>
           </li>
           <li>
-            <Link to="/blog"> Notes</Link>
+            <StyledLink to="/portfolio"> Projects</StyledLink>
           </li>
           <li>
-            <img src={data.logo.publicURL} alt="Josep Bria" width="100" />
+            <StyledLink to="/blog"> Notes</StyledLink>
+          </li>
+
+          <li>
+            <StyledLink to="/contact"> Contact</StyledLink>
           </li>
           <li>
-            <Link to="/contact"> Contact</Link>
-          </li>
-          <li>
-            <Link to="/about"> About</Link>
+            <StyledLink to="/about"> About</StyledLink>
           </li>
         </List>
       </nav>
