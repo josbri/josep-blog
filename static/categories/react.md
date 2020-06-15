@@ -1,4 +1,4 @@
 ---
 name: React
-logo: static/categories/assets/reactlogo.svg
+logo: reactlogo.svg
 ---
