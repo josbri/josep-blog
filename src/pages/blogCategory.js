@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import MainLayout from "../templates/mainLayout"
 
-const BlogPage = () => {
+const BlogCategory = ({ category }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -47,4 +47,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default BlogCategory

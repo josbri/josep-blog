@@ -27,7 +27,12 @@ collections:
   - name: categories
     label: Categories
     folder: static/categories
+    media_folder: assets
+    public_folder: ""
     create: true
+    slug: "{{name}}"
+    editor:
+      preview: false
     fields:
       - { name: name, label: Name, widget: string, required: true }
       - { name: logo, label: Logo, widget: image, required: true }
