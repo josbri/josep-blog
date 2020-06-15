@@ -4,6 +4,7 @@ tags:
   - CSS
 title: La proba to fresca del slug
 slug: proba
+type: blog
 ---
 
 1. ![Grass](assets/gaocopy.jpg "El grass")

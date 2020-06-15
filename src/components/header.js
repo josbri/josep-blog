@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 const Container = styled.header`
-  grid-column: 2 / span 12;
+  grid-column: 2 / span 9;
   grid-row: 1 / 2;
 
   margin-bottom: ${props => props.theme.spacings.small};
@@ -55,9 +55,9 @@ const Header = () => {
           <li>
             <StyledLink to="/portfolio"> Projects</StyledLink>
           </li>
-          <li>
+          {/*<li>
             <StyledLink to="/blog"> Notes</StyledLink>
-          </li>
+          </li>*/}
 
           <li>
             <StyledLink to="/contact"> Contact</StyledLink>

@@ -6,16 +6,16 @@ const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
+        filter: { frontmatter: { type: { eq: "category" } } }
+        sort: { order: DESC, fields: [frontmatter___name] }
       ) {
         edges {
           node {
             frontmatter {
-              title
-              date(formatString: "DD MMMM, YYYY")
-              slug
-              tags
+              name
+              logo {
+                publicURL
+              }
             }
           }
         }
@@ -25,24 +25,27 @@ const BlogPage = () => {
 
   return (
     <MainLayout title="Blogs">
-      <h1>Blogs</h1>
-      <ol>
-        {data.allMarkdownRemark.edges.map(edge => {
-          return (
-            <li>
-              <Link to={`/blog/${edge.node.frontmatter.slug}`}>
-                <h2>{edge.node.frontmatter.title}</h2>
-                <p>{edge.node.frontmatter.date}</p>
-                <ol>
-                  {edge.node.frontmatter.tags.map(tag => {
-                    return <p>{tag}</p>
-                  })}
-                </ol>
+      <li>
+        <h1>Notes</h1>
+        <p>A place to keep notes as I learn.</p>
+        <ol>
+          {data.allMarkdownRemark.edges.map(edge => {
+            return (
+              <Link
+                to={`/blogCategory`}
+                state={{ category: edge.node.frontmatter.name }}
+              >
+                <p>{edge.node.frontmatter.name}</p>
+                <img
+                  src={edge.node.frontmatter.logo.publicURL}
+                  alt={edge.node.frontmatter.name}
+                  width="200"
+                ></img>
               </Link>
-            </li>
-          )
-        })}
-      </ol>
+            )
+          })}
+        </ol>
+      </li>
     </MainLayout>
   )
 }

@@ -1,4 +1,5 @@
 ---
 name: CSS
-logo: csslogo.svg
+logo: assets/csslogo.svg
+type: category
 ---

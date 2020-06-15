@@ -1,4 +1,5 @@
 ---
 name: React
-logo: reactlogo.svg
+logo: assets/reactlogo.svg
+type: category
 ---

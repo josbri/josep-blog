@@ -8,7 +8,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   //Get all the slugs
   const res = await graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "blog" } } }) {
         edges {
           node {
             frontmatter {

@@ -14,20 +14,20 @@ module.exports = {
       },
     },
     {
+      //Look for categories in the filesistem.
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "categories",
+        path: `${__dirname}/static/categories/`,
+      },
+    },
+    {
       //Look for images in the filesistem.
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
         //Busca en la carpeta images para sources
         path: `${__dirname}/src/assets/images`,
-      },
-    },
-    {
-      //Look for categories in the filesistem.
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "categories",
-        path: `${__dirname}/static/categories/`,
       },
     },
     "gatsby-plugin-sharp",

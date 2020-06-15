@@ -4,5 +4,7 @@ tags:
   - React
 title: Probat Tags
 slug: probant-tags
+type: blog
 ---
+
 Asdasdasd

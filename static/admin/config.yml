@@ -23,12 +23,13 @@ collections:
       - { name: title, label: Title, widget: string, required: true }
       - { name: slug, lable: Slug, widget: string, required: true }
       - { name: body, label: Body, widget: markdown }
+      - { name: type, label: Type, widget: "hidden", default: "blog" }
 
   - name: categories
     label: Categories
     folder: static/categories
     media_folder: assets
-    public_folder: ""
+    public_folder: assets
     create: true
     slug: "{{name}}"
     editor:
@@ -36,3 +37,28 @@ collections:
     fields:
       - { name: name, label: Name, widget: string, required: true }
       - { name: logo, label: Logo, widget: image, required: true }
+      - { name: type, label: Type, widget: "hidden", default: "category" }
+
+  - name: portfolio
+    label: Portfolio
+    folder: static/portfolio
+    media_folder: assets
+    public_folder: assets
+    create: true
+    fields:
+      - { name: type, label: Type, widget: "hidden", default: "porfolio" }
+      - { name: title, label: Title, widget: string, required: true }
+      - { name: slug, lable: Slug, widget: string, required: true }
+      - {
+          name: area,
+          label: Area,
+          widget: select,
+          multiple: true,
+          options: ["Front-End", "Back-End", "Mobile"],
+          min: 1,
+        }
+      - { name: link, label: "Link", widget: string }
+      - { name: image, label: Image, widget: image }
+      - { name: technologies, label: Technology, widget: list }
+      - { name: description, label: Description, widget: markdown }
+      - { name: body, label: Body, widget: markdown }
