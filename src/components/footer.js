@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Container = styled.footer`
   grid-column: 2 / span 12;
+  grid-row: 4;
   min-height: 11.25rem;
   padding: 3rem 0;
   display: flex;
@@ -57,7 +58,6 @@ const Footer = () => {
     <Container>
       <FooterSocialWrapper>
         <p>Created by Josep Bria, ©2020</p>
-        <p>Need a developer? </p>
         <FooterSocialIcons>
           <a
             href="https://www.linkedin.com/in/josepbria"

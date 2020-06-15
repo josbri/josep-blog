@@ -1,10 +1,19 @@
 export default {
   fonts: {
-    main: "Work Sans, sans-serif",
+    main: "Montserrat, Rubik, sans-serif",
     code: "Roboto Mono, monospace",
   },
+  fontWeights: {
+    Thin: 100,
+    ExtraLight: 200,
+    Light: 300,
+    Medium: 500,
+    Bold: 700,
+    ExtraBold: 900,
+  },
   colors: {
-    //main, dark, light,
+    main: "#50C777",
+    darkText: "#2A332C",
   },
   breakpoints: {
     mobile: "only screen and (max-width: 50rem)",
