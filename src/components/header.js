@@ -19,16 +19,31 @@ const Container = styled.header`
 `
 const Nav = styled.nav`
   grid-column: 6;
-
-  font-weight: ${props => props.theme.fontWeights.Thin};
+  font-weight: ${props => props.theme.fontWeights.thin};
   font-size: 1.2rem;
   ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-  }
-  li {
-    margin-left: 2rem;
+    li {
+      position: relative;
+
+      margin-left: 2rem;
+    }
+    a:before {
+      content: "";
+      position: absolute;
+      height: 15%;
+      width: 0;
+      background-color: ${props => props.theme.colors.main};
+      z-index: 0;
+      top: -10;
+      transition: all 0.5s;
+    }
+    a:hover:before,
+    .active:before {
+      width: 100%;
+    }
   }
 `
 const StyledLink = styled(Link)`
@@ -36,6 +51,9 @@ const StyledLink = styled(Link)`
   &:hover,
   &:visited {
     color: inherit;
+  }
+  &:active {
+    color: red;
   }
 `
 const Logo = styled.a`
@@ -59,13 +77,22 @@ const Header = () => {
       <Nav>
         <ul>
           <li>
-            <StyledLink to="/portfolio"> Projects</StyledLink>
+            <StyledLink to="/portfolio" activeClassName="active">
+              {" "}
+              Projects
+            </StyledLink>
           </li>
           <li>
-            <StyledLink to="/blog"> Notes</StyledLink>
+            <StyledLink to="/blog" activeClassName="active">
+              {" "}
+              Notes
+            </StyledLink>
           </li>
           <li>
-            <StyledLink to="/contact"> Contact</StyledLink>
+            <StyledLink to="/contact" activeClassName="active">
+              {" "}
+              Contact
+            </StyledLink>
           </li>
         </ul>
       </Nav>

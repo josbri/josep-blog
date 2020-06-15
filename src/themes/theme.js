@@ -4,12 +4,12 @@ export default {
     code: "Roboto Mono, monospace",
   },
   fontWeights: {
-    Thin: 100,
-    ExtraLight: 200,
-    Light: 300,
-    Medium: 500,
-    Bold: 700,
-    ExtraBold: 900,
+    thin: 100,
+    extraLight: 200,
+    light: 300,
+    medium: 500,
+    bold: 700,
+    extraBold: 900,
   },
   colors: {
     main: "#50C777",
