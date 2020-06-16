@@ -9,6 +9,26 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         color: ${props => props.theme.colors.darkText};
         -webkit-font-smoothing: antialiased;
+        @-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
     }
     body, html {
         font-family: ${props => props.theme.fonts.main};

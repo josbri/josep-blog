@@ -45,7 +45,33 @@ const Portfolio = () => {
       ${props => props.theme.spacings.large} 0;
     border-radius: 4px;
     box-shadow: ${props => props.theme.shadows.shadow1};
-
+    &:hover {
+      -webkit-animation: scale-up-center 400ms
+        cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      animation: scale-up-center 400ms cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      @-webkit-keyframes scale-up-center {
+        0% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        100% {
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+          box-shadow: ${props => props.theme.shadows.shadow3};
+        }
+      }
+      @keyframes scale-up-center {
+        0% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        100% {
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+          box-shadow: ${props => props.theme.shadows.shadow3};
+        }
+      }
+    }
     h3 {
       font-size: 1.7em;
       margin-bottom: ${props => props.theme.spacings.medium};
