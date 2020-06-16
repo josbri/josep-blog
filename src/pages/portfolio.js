@@ -8,6 +8,7 @@ const Portfolio = () => {
     query {
       allMarkdownRemark(
         filter: { frontmatter: { type: { eq: "portfolio" } } }
+        sort: { fields: frontmatter___order, order: ASC }
       ) {
         edges {
           node {
@@ -167,5 +168,9 @@ const TextContainer = styled.div`
   flex-direction: column;
   width: 70%;
   align-items: flex-end;
+  span {
+    font-size: 0.8rem;
+    text-align: center;
+  }
 `
 export default Portfolio
