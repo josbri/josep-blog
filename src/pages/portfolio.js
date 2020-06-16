@@ -8,6 +8,7 @@ const Portfolio = () => {
     query {
       allMarkdownRemark(
         filter: { frontmatter: { type: { eq: "portfolio" } } }
+        sort: { order: DESC }
       ) {
         edges {
           node {
@@ -28,37 +29,26 @@ const Portfolio = () => {
       github: file(relativePath: { eq: "githubLogo.svg" }) {
         publicURL
       }
+      texture: file(relativePath: { eq: "texture.png" }) {
+        publicURL
+      }
     }
   `)
   const Card = styled.div`
-    position: relative;
     display: flex;
     flex-direction: row;
     width: 90%;
-    overflow: hidden;
-
-    justify-content: flex-end;
     margin: ${props => props.theme.spacings.medium};
     padding: ${props => props.theme.spacings.large}
       ${props => props.theme.spacings.large}
       ${props => props.theme.spacings.large} 0;
     border-radius: 4px;
     box-shadow: ${props => props.theme.shadows.shadow1};
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      -60deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 75%,
-      ${props => props.theme.colors.darkText} 76%,
-      ${props => props.theme.colors.darkText} 76%,
-      rgba(255, 255, 255, 0) 76%,
-      rgba(255, 255, 255, 0) 100%
-    );
+
     h3 {
       font-size: 1.7em;
       margin-bottom: ${props => props.theme.spacings.medium};
     }
-
     a {
       align-self: flex-end;
     }
@@ -120,6 +110,7 @@ const TechContainer = styled.div`
 `
 const Tech = styled.span`
   padding: ${props => props.theme.spacings.xxSmall};
+  margin: ${props => props.theme.spacings.xxSmall};
   border-radius: 4px;
   border: solid 2px ${props => props.theme.colors.main};
 `
@@ -163,20 +154,19 @@ const GitButton = styled.button`
 `
 const ImageCardContainer = styled.div`
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
   margin-right: ${props => props.theme.spacings.small};
+  margin-left: ${props => props.theme.spacings.small};
+  width: 30%;
+  justify-content: center;
   img {
-    overflow: hidden;
+    display: flex;
+    max-width: 200px;
   }
 `
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 70%;
-  align-self: flex-end;
   align-items: flex-end;
 `
 export default Portfolio

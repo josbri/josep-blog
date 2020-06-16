@@ -4,14 +4,6 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 const Header = () => {
-  //Get the Logo:
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "logo.svg" }) {
-        publicURL
-      }
-    }
-  `)
   return (
     <Container>
       <Logo>Josep Bria</Logo>
@@ -23,12 +15,12 @@ const Header = () => {
               Projects
             </StyledLink>
           </li>
-          <li>
+          {/*<li>
             <StyledLink to="/blog" activeClassName="active">
               {" "}
               Notes
             </StyledLink>
-          </li>
+          </li>*/}
           <li>
             <StyledLink to="/contact" activeClassName="active">
               {" "}

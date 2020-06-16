@@ -3,7 +3,7 @@ import Head from "../components/head"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import styled from "styled-components"
-
+import { useStaticQuery } from "gatsby"
 //14 column grid, with 2 blank spaces on the side
 //8 column grid in tablet.
 const Container = styled.div`
@@ -31,6 +31,14 @@ const Body = styled.div`
   }
 `
 const MainLayout = props => {
+  //Get the texture:
+  const data = useStaticQuery(graphql`
+    query {
+      texture: file(relativePath: { eq: "texture.png" }) {
+        publicURL
+      }
+    }
+  `)
   return (
     <Container>
       <Head title={props.title} />
