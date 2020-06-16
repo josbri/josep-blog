@@ -14,9 +14,8 @@ technologies:
   - GraphQl
   - Netlify
   - Netlify CMS
-  - Styled-Components
 description: This portfolio. Made following the
-  JAMstack guidelines, uses Gatsby for the front and a headless Netlify CMS to
+  JAMstack guidelines, uses Gatsby and a headless Netlify CMS to
   generate the markdown content. Deployed to Netlify.
 ---
 

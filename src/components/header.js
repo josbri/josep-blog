@@ -2,6 +2,7 @@ import React from "react"
 
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
+import Typewriter from "typewriter-effect"
 
 const Header = () => {
   return (
@@ -68,7 +69,7 @@ const Nav = styled.nav`
       height: 15%;
       width: 0;
       background-color: ${props => props.theme.colors.main50};
-      z-index: -1;
+      z-index: 0;
       bottom: 25%;
       transition: all 0.5s;
     }
@@ -86,7 +87,7 @@ const StyledLink = styled(Link)`
   }
 `
 const Logo = styled.a`
-  font-size: 2rem;
-  font-weight: ${props => props.theme.fontWeights.Thin};
+  font-size: 3rem;
+  font-weight: ${props => props.theme.fontWeights.thin};
   color: ${props => props.theme.colors.main};
 `

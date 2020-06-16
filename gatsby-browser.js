@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         color: ${props => props.theme.colors.darkText};
+        -webkit-font-smoothing: antialiased;
     }
     body, html {
         font-family: ${props => props.theme.fonts.main};

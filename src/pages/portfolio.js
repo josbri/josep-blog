@@ -37,7 +37,8 @@ const Portfolio = () => {
   const Card = styled.div`
     display: flex;
     flex-direction: row;
-    width: 90%;
+    background-color: #ffffff99;
+    width: 100%;
     margin: ${props => props.theme.spacings.medium};
     padding: ${props => props.theme.spacings.large}
       ${props => props.theme.spacings.large}
@@ -55,64 +56,59 @@ const Portfolio = () => {
   `
   return (
     <MainLayout title="Portfolio">
-      <Container>
-        <h1>Projects</h1>
-        {data.allMarkdownRemark.edges.map(edge => {
-          return (
-            <Card>
-              <ImageCardContainer>
-                <img
-                  src={edge.node.frontmatter.image.publicURL}
-                  alt={edge.node.frontmatter.title}
-                />
-              </ImageCardContainer>
-              <TextContainer>
-                <h3> {edge.node.frontmatter.title}</h3>
-                <p>{edge.node.frontmatter.description}</p>
-                <TechContainer>
-                  {edge.node.frontmatter.technologies.map(tech => (
-                    <Tech>{tech}</Tech>
-                  ))}
-                </TechContainer>
+      <h1>Projects</h1>
+      {data.allMarkdownRemark.edges.map(edge => {
+        return (
+          <Card>
+            <ImageCardContainer>
+              <img
+                src={edge.node.frontmatter.image.publicURL}
+                alt={edge.node.frontmatter.title}
+              />
+            </ImageCardContainer>
+            <TextContainer>
+              <h3> {edge.node.frontmatter.title}</h3>
+              <p>{edge.node.frontmatter.description}</p>
+              <TechContainer>
+                {edge.node.frontmatter.technologies.map(tech => (
+                  <Tech>{tech}</Tech>
+                ))}
+              </TechContainer>
 
-                <a
-                  href={edge.node.frontmatter.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GitButton>
-                    <img src={data.github.publicURL} alt="github" />
-                    <span>View Code</span>
-                  </GitButton>
-                </a>
-              </TextContainer>
-            </Card>
-          )
-        })}
-      </Container>
+              <a
+                href={edge.node.frontmatter.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitButton>
+                  <img src={data.github.publicURL} alt="github" />
+                  <span>View Code</span>
+                </GitButton>
+              </a>
+            </TextContainer>
+          </Card>
+        )
+      })}
     </MainLayout>
   )
 }
 
-const Container = styled.div`
-  margin-top: ${props => props.theme.spacings.small};
-  margin-bottom: ${props => props.theme.spacings.small};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const TechContainer = styled.div`
-  padding: ${props => props.theme.spacings.small};
+  padding: ${props => props.theme.spacings.small} 0;
+  margin-bottom: ${props => props.theme.spacings.small};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  span {
+    font-size: 0.8rem;
+  }
 `
 const Tech = styled.span`
-  padding: ${props => props.theme.spacings.xxSmall};
-  margin: ${props => props.theme.spacings.xxSmall};
+  padding: ${props => props.theme.spacings.xSmall};
+  margin-left: ${props => props.theme.spacings.xSmall};
   border-radius: 4px;
-  border: solid 2px ${props => props.theme.colors.main};
+  border: solid 1px ${props => props.theme.colors.main};
+  white-space: nowrap;
 `
 
 const GitButton = styled.button`
@@ -122,7 +118,7 @@ const GitButton = styled.button`
   padding: 10px;
   text-decoration: none;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   width: 170px;
   box-shadow: ${props => props.theme.shadows.shadow2};
   transition: all 0.5s;
@@ -154,8 +150,8 @@ const GitButton = styled.button`
 `
 const ImageCardContainer = styled.div`
   display: flex;
-  margin-right: ${props => props.theme.spacings.small};
-  margin-left: ${props => props.theme.spacings.small};
+  margin-right: ${props => props.theme.spacings.medium};
+  margin-left: ${props => props.theme.spacings.medium};
   width: 30%;
   justify-content: center;
   img {
@@ -168,9 +164,8 @@ const TextContainer = styled.div`
   flex-direction: column;
   width: 70%;
   align-items: flex-end;
-  span {
-    font-size: 0.8rem;
-    text-align: center;
+  p {
+    line-height: 1.5rem;
   }
 `
 export default Portfolio
