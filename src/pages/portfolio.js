@@ -31,18 +31,29 @@ const Portfolio = () => {
     }
   `)
   const Card = styled.div`
+    position: relative;
     display: flex;
     flex-direction: row;
     width: 90%;
-    justify-content: space-between;
-    min-height: 330px;
+    overflow: hidden;
+
+    justify-content: flex-end;
     margin: ${props => props.theme.spacings.medium};
     padding: ${props => props.theme.spacings.large}
       ${props => props.theme.spacings.large}
       ${props => props.theme.spacings.large} 0;
     border-radius: 4px;
     box-shadow: ${props => props.theme.shadows.shadow1};
-
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      -60deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 75%,
+      ${props => props.theme.colors.darkText} 76%,
+      ${props => props.theme.colors.darkText} 76%,
+      rgba(255, 255, 255, 0) 76%,
+      rgba(255, 255, 255, 0) 100%
+    );
     h3 {
       font-size: 1.7em;
       margin-bottom: ${props => props.theme.spacings.medium};
@@ -152,9 +163,13 @@ const GitButton = styled.button`
 `
 const ImageCardContainer = styled.div`
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin-right: ${props => props.theme.spacings.small};
   img {
-    width: 200px;
-    fill: ${props => props.theme.colors.main};
+    overflow: hidden;
   }
 `
 const TextContainer = styled.div`
@@ -162,5 +177,6 @@ const TextContainer = styled.div`
   flex-direction: column;
   width: 70%;
   align-self: flex-end;
+  align-items: flex-end;
 `
 export default Portfolio
