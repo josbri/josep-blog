@@ -46,7 +46,7 @@ collections:
     public_folder: assets
     create: true
     fields:
-      - { name: type, label: Type, widget: "hidden", default: "porfolio" }
+      - { name: type, label: Type, widget: "hidden", default: "portfolio" }
       - { name: title, label: Title, widget: string, required: true }
       - { name: slug, lable: Slug, widget: string, required: true }
       - {

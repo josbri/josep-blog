@@ -1,5 +1,5 @@
 ---
-type: porfolio
+type: portfolio
 title: PlaceMyBet Mobile
 slug: placemybet-reactnative
 area:
@@ -10,4 +10,5 @@ technologies:
   - React Native
 description: React Native mobile application for a betting platform.
 ---
+
 React Native mobile application for a betting platform.

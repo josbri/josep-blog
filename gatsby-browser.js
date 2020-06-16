@@ -11,7 +11,12 @@ const GlobalStyles = createGlobalStyle`
     }
     body, html {
         font-family: ${props => props.theme.fonts.main};
-        height: 100%; 
+        height: 100%;
+
+    }
+    html {
+      background-color: ${props => props.theme.colors.light1} 
+
     }
 `
 //Wrapping the application with the theme provider

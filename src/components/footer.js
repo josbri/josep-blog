@@ -34,13 +34,13 @@ const FooterSocialIcons = styled.div`
   margin-bottom: 2rem;
 
   img {
+    width: 55px;
     padding: 0 1rem;
     transition: filter 0.3s ease;
-    width: 55px;
-    &:hover,
-    &:focus {
-      filter: brightness(150%);
-    }
+  }
+  img:hover,
+  img:focus {
+    filter: invert(30%);
   }
 `
 const Footer = () => {

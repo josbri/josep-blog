@@ -1,5 +1,5 @@
 ---
-type: porfolio
+type: portfolio
 title: PlaceMyBet
 slug: placemybet
 area:
@@ -15,4 +15,5 @@ technologies:
 description: Desktop application for a betting platform, using .Net (Winforms)
   and SQL Server.
 ---
+
 Desktop application for a betting platform, using .Net (Winforms) and SQL Server.

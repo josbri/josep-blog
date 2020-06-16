@@ -22,12 +22,9 @@ const Container = styled.div`
   }
 `
 const Body = styled.div`
-  grid-column: 2 / span 12;
+  grid-column: 3 / span 10;
   min-height: 11.25rem;
   padding: ${props => props.theme.spacings.medium};
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 
   @media ${props => props.theme.breakpoints.tablet} {
     grid-column: 2 / span 6;
@@ -39,7 +36,6 @@ const MainLayout = props => {
       <Head title={props.title} />
       <Header />
       <Body>{props.children}</Body>
-      <Footer />
     </Container>
   )
 }

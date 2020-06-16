@@ -22,6 +22,14 @@ module.exports = {
       },
     },
     {
+      //Look for categories in the filesistem.
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "portfolio",
+        path: `${__dirname}/static/portfolio/`,
+      },
+    },
+    {
       //Look for images in the filesistem.
       resolve: "gatsby-source-filesystem",
       options: {

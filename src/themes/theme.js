@@ -13,7 +13,9 @@ export default {
   },
   colors: {
     main: "#50C777",
+    main50: "#50C77766",
     darkText: "#2A332C",
+    light1: "white",
   },
   breakpoints: {
     mobile: "only screen and (max-width: 50rem)",
@@ -33,6 +35,9 @@ export default {
     link: "color 0.2s ease",
   },
   shadows: {
-    shadow1: "0px 5px 20px rgba(30, 30, 31, 0.05)",
+    shadow1:
+      "0 50px 100px rgba(50, 50, 93, 0.05),0 15px 35px rgba(50, 50, 93, 0.1),0 5px 15px rgba(0, 0, 0, 0.1)",
+
+    shadow2: "0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)",
   },
 }
