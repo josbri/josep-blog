@@ -62,3 +62,4 @@ collections:
       - { name: technologies, label: Technology, widget: list }
       - { name: description, label: Description, widget: markdown }
       - { name: body, label: Body, widget: markdown }
+      - { name: order, label: Order, widget: number }

@@ -1,4 +1,5 @@
 ---
+order: 7
 type: portfolio
 title: PlaceMyBet Mobile
 slug: placemybet-reactnative

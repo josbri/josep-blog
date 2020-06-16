@@ -8,7 +8,6 @@ const Portfolio = () => {
     query {
       allMarkdownRemark(
         filter: { frontmatter: { type: { eq: "portfolio" } } }
-        sort: { order: DESC }
       ) {
         edges {
           node {
@@ -63,7 +62,7 @@ const Portfolio = () => {
               <ImageCardContainer>
                 <img
                   src={edge.node.frontmatter.image.publicURL}
-                  alt="{edge.node.frontmatter.image.publicURL}"
+                  alt={edge.node.frontmatter.title}
                 />
               </ImageCardContainer>
               <TextContainer>
