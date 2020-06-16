@@ -6,7 +6,7 @@ area:
   - Front-End
   - Back-End
 link: https://github.com/josbri/PlaceMyBet_Desktop
-image: assets/placemybet1.jpg
+image: assets/netcorelogo.svg
 technologies:
   - .Net
   - SQL Server
